@@ -4,9 +4,10 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import CartComponent from './CartComponent';
+import CartButton from './CartButton';
 
 
-function NavBarComponent() {
+function NavBarComponent(props) {
   return (
     <div>
          <Navbar className="bg-body-tertiary fs-5 mb-3" data-bs-theme="dark">
@@ -16,6 +17,7 @@ function NavBarComponent() {
                     <Nav.Link className="mx-3" href="#store">STORE</Nav.Link>
                     <Nav.Link className="mx-3" href="#about">ABOUT</Nav.Link>
                 </Nav>
+                <CartButton onShow={props.onShow}/>
                 <CartComponent/>
             </Container>
         </Navbar>

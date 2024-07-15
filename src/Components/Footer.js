@@ -11,7 +11,7 @@ function Footer() {
             <div style={{ margin: "25px", padding:"20px"}}>
                 <Row >
                     <Col>
-                        <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMaKPzFTNEL7YSIhO5K7UeSm6U9D0BjFycUg&s' style={{ width: "5rem", mixBlendMode: "multiply" }}></img>
+                        <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMaKPzFTNEL7YSIhO5K7UeSm6U9D0BjFycUg&s' style={{ width: "5rem", mixBlendMode: "" }}></img>
                     </Col>
                     <Col>
                         <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ34bRdACbbLrn8ADrw2dPd96BEIbaoVoxr9g&s' style={{ width: "5rem", mixBlendMode: "multiply" }}></img>

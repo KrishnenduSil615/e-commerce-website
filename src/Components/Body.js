@@ -20,7 +20,7 @@ function Body(props) {
                   </div>
                   <Card.Body className='d-flex justify-content-between'>
                     <p>₹{product.price}</p>
-                    <Button variant="primary">Add to Cart</Button>
+                    <Button variant="primary" onClick={props.onShow}>Add to Cart</Button>
                   </Card.Body>
                 </Card>
               </div>

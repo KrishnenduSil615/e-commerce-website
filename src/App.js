@@ -1,8 +1,11 @@
 
 import './App.css';
+import { useState } from'react';
 import React, { Accordion, Button } from 'react-bootstrap';
 import Body from './Components/Body';
 import Header from './Components/Header';
+import CartButton from './Components/CartButton';
+import CartComponent from './Components/CartComponent';
 
 const productsArr = [
   {
@@ -27,10 +30,18 @@ const productsArr = [
   }
 ]
 
-function App() {
+function App() { 
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   return (
     <div>
-      <Header/>
+      <Header onShow={handleShow}/>
+      {show &&<CartComponent onShow={handleShow} onClose={handleClose}/>}
+      
+      <CartComponent show={show}  onClose={handleClose}/>
       <Body productsArr={productsArr}/>
     </div>
   );
