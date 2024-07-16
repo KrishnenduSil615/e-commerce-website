@@ -10,7 +10,7 @@ import CartButton from './CartButton';
 function NavBarComponent(props) {
   return (
     <div>
-         <Navbar className="bg-body-tertiary fs-5 mb-3" data-bs-theme="dark">
+         <Navbar className="bg-body-tertiary fs-5 mb-1" data-bs-theme="dark">
             <Container>
                 <Nav className="mx-auto text-md ">
                     <Nav.Link className="mx-3" href="#home" >HOME</Nav.Link>

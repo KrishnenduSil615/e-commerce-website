@@ -1,15 +1,20 @@
-import React, { Button, Card } from 'react-bootstrap'
+import { Button, Card } from 'react-bootstrap'
 import Footer from './Footer';
+import React, {useContext} from 'react';
+import CartCntext from '../Store/CartContext';
 
 function Body(props) {
+  const cartCtx = useContext(CartCntext)
+  console.log(cartCtx)
   return (
     <>
       <div className='container'>
-        <div class="row d-flex justify-content-center">
-          {props.productsArr.map((product) => {
+        <div className="row d-flex justify-content-center">
+          {props.productsArr.map((product, index) => {
+          const newProduct={id:`${index+1}`, ...product, quantity: 1}
             return (
-              <div class="col-5 d-flex justify-content-center">
-                <Card key={product.id} class="container text-center " style={{ width: '18rem', border: 0 }}>
+              <div key={Math.random()} className="col-5 d-flex justify-content-center">
+                <Card  className="container text-center " style={{ width: '18rem', border: 0 }}>
                   <Card.Header style={{ fontSize: "1.25rem", textAlign: "center", fontWeight: "bold" }}>{product.title}</Card.Header>
                   <div style={{ overflow: "hidden" }}>
                     <Card.Img alt={product.name}
@@ -20,15 +25,15 @@ function Body(props) {
                   </div>
                   <Card.Body className='d-flex justify-content-between'>
                     <p>₹{product.price}</p>
-                    <Button variant="primary" onClick={props.onShow}>Add to Cart</Button>
+                    <Button variant="primary" onClick={cartCtx.addItem.bind(null, newProduct)}>Add to Cart</Button>
                   </Card.Body>
                 </Card>
               </div>
             )
           })}
         </div>
-        <div class="text-center p-3">
-            <a class="bg-secondary" type='button' style={{ color: "#fff", textAlign:"center", padding:"9px", borderRadius:"9px", textDecoration:"none" }}>See the Card</a>
+        <div className="text-center p-3">
+            <a className="bg-secondary" type='button' style={{ color: "#fff", textAlign:"center", padding:"9px", borderRadius:"9px", textDecoration:"none" }} onClick={props.onShow}>See the Card</a>
         </div>
       </div>
         <Footer />
