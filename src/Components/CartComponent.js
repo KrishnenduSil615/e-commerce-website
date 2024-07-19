@@ -6,8 +6,6 @@ function CartComponent(props) {
 
   const cartCtx = useContext(CartCntext)
 
- 
-
   return (
     <>
       <Offcanvas scroll="true" show={props.show} placement="end" onHide={props.onClose} style={{ width: "40rem", top: "4rem" }}>

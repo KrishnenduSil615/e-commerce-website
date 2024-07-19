@@ -8,12 +8,12 @@ function Body(props) {
   console.log(cartCtx)
   return (
     <>
-      <div className='container'>
+      <div className='container '>
         <div className="row d-flex justify-content-center">
           {props.productsArr.map((product, index) => {
           const newProduct={id:`${index+1}`, ...product, quantity: 1}
             return (
-              <div key={Math.random()} className="col-5 d-flex justify-content-center">
+              <div key={Math.random()} className=" col-md-5 d-flex justify-content-center">
                 <Card  className="container text-center " style={{ width: '18rem', border: 0 }}>
                   <Card.Header style={{ fontSize: "1.25rem", textAlign: "center", fontWeight: "bold" }}>{product.title}</Card.Header>
                   <div style={{ overflow: "hidden" }}>
@@ -36,7 +36,7 @@ function Body(props) {
             <a className="bg-secondary" type='button' style={{ color: "#fff", textAlign:"center", padding:"9px", borderRadius:"9px", textDecoration:"none" }} onClick={props.onShow}>See the Card</a>
         </div>
       </div>
-        <Footer />
+       
 
 
     </>

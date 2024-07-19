@@ -1,53 +1,40 @@
 
 import './App.css';
-import { useState } from'react';
-import React, { Accordion, Button } from 'react-bootstrap';
-import Body from './Components/Body';
-import Header from './Components/Header';
-import CartButton from './Components/CartButton';
-import CartComponent from './Components/CartComponent';
 import CartProvider from './Store/CartProvider';
+import { createBrowserRouter,  RouterProvider } from 'react-router-dom';
+import Store from './Pages/Store';
+import Home from './Pages/Home';
+import Root from './Pages/Root';
+import About from './Pages/About';
 
-const productsArr = [
-  {
-    
-    title: 'Colors',
-    price: 100,
-    imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%201.png',
-  },
-  {
-    
-    title: 'Black and white Colors',
-    price: 50,
-    imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%202.png',
-  },
-  {
-    
-    title: 'Yellow and Black Colors',
-    price: 70,
-    imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%203.png',
-  },
-  {
-    
-    title: 'Blue Color',
-    price: 100,
-    imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%204.png',
-  }
-]
+function App() {
 
-function App() { 
-  const [show, setShow] = useState(false);
+  const router = createBrowserRouter([
+    {
+      path: '/',
+      element: <Root />,
+      children: [
+        {
+          path: '/home',
+          element: <Home />,
+        },
+        {
+          path: '/store',
+          element: <Store />
+        },
+        {
+          path: '/about',
+          element: <About />
+        },
+      ]
+    }
+  ])
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
 
   return (
     <CartProvider>
-      <Header onShow={handleShow}/>
-      {/* {show &&<CartComponent onShow={handleShow} onClose={handleClose}/>} */}
-      
-      <CartComponent show={show}  onClose={handleClose}/>
-      <Body productsArr={productsArr}  onShow={handleShow}/>
+            
+      <RouterProvider router={router} />
     </CartProvider>
   );
 }
