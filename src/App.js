@@ -1,7 +1,7 @@
 
 import './App.css';
 import CartProvider from './Store/CartProvider';
-import { createBrowserRouter,  RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Store from './Pages/Store';
 import Home from './Pages/Home';
 import Root from './Pages/Root';
@@ -33,10 +33,10 @@ function App() {
 
   return (
     <CartProvider>
-            
       <RouterProvider router={router} />
     </CartProvider>
   );
 }
 
 export default App;
+

@@ -3,13 +3,12 @@ import { Row, Col } from 'react-bootstrap';
 
 function Footer() {
     return (
-        <div className='bg-info d-flex justify-content-between'>
+        <div className='bg-info d-flex justify-content-between md-6'>
             <Col>
                 <h1 style={{ fontSize: "70px", padding: "15px", color: "#fff" }}>The Generics</h1>
             </Col>
-
-            <div style={{ margin: "15px", padding:"10px"}}>
-                <Row >
+          
+                <Row style={{ margin: "15px", padding:"10px"}}>
                     <Col>
                         <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMaKPzFTNEL7YSIhO5K7UeSm6U9D0BjFycUg&s' style={{ width: "5rem", mixBlendMode: "" }}></img>
                     </Col>
@@ -20,10 +19,9 @@ function Footer() {
                         <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTI-h-e2hgz8mwGfCt4gvj4IgMG_wAUolVM6w&s' style={{ width: "5rem", mixBlendMode: "multiply" }}></img>
                     </Col>
                 </Row>
-            </div>
         </div>
-
     )
 }
 
 export default Footer;
+            
