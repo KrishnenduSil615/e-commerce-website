@@ -8,12 +8,12 @@ function Store() {
   console.log(outLetCtx)
   return (
     <div>
-         
       <CartComponent show={outLetCtx.show}  onClose={outLetCtx.onClose}/>
       <Body productsArr={outLetCtx.productsArr}  onShow={outLetCtx.onShow}/>
-      
     </div>
   )
 }
 
 export default Store
+      
+         

@@ -12,7 +12,7 @@ function Header(props) {
     <div >
       <NavBarComponent onShow={props.onShow} />
 
-      {location.pathname === '/home' &&
+      {location.pathname === '/' &&
         <div className="bg-secondary" style={{ top: "-5px" }}>
           <h1 style={{ fontSize: "70px", textAlign: "center", padding: "18px", color: "#fff" }}>The Generics</h1>
           <Row className='text-center' xs={12}>

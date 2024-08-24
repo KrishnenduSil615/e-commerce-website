@@ -6,6 +6,7 @@ import Store from './Pages/Store';
 import Home from './Pages/Home';
 import Root from './Pages/Root';
 import About from './Pages/About';
+import Contect from './Pages/Contect';
 
 function App() {
 
@@ -15,7 +16,7 @@ function App() {
       element: <Root />,
       children: [
         {
-          path: '/home',
+          path: '/',
           element: <Home />,
         },
         {
@@ -25,6 +26,10 @@ function App() {
         {
           path: '/about',
           element: <About />
+        },
+        {
+          path: '/contact',
+          element: <Contect/>
         },
       ]
     }
