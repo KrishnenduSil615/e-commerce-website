@@ -7,6 +7,7 @@ import Home from './Pages/Home';
 import Root from './Pages/Root';
 import About from './Pages/About';
 import Contect from './Pages/Contect';
+import ProductPage from './Pages/ProductPage';
 
 function App() {
 
@@ -24,12 +25,16 @@ function App() {
           element: <Store />
         },
         {
+          path: '/store/:productId',
+          element: <ProductPage /> // New route for individual product pages
+        },
+        {
           path: '/about',
           element: <About />
         },
         {
           path: '/contact',
-          element: <Contect/>
+          element: <Contect />
         },
       ]
     }
